@@ -1,7 +1,12 @@
 <div class="cover-main"><img width="180px" src="icon/icon.JPG">
 
-<h1 id="toBeTopJavaer">
-<a><span>JAVA 学习笔记</span></a></h1>
+<h1 id="Javaer">
+<a><span> JAVA 学习笔记 </span></a>
+</h1>
+
+
+
+![](https://img.shields.io/badge/author-lazylittle-yellow.svg)
 
 
 <span id="busuanzi_container_site_pv" style="display: inline;">
@@ -12,5 +17,6 @@
 </span>
 
 
-<a href="#/README">开始阅读</a>
-</div><div class="mask"></div></section>
+<a href="#/menu">开始阅读</a>
+</div>
+<div class="mask"></div></section>
