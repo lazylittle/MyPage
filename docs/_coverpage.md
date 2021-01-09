@@ -17,6 +17,6 @@
 </span>
 
 
-<a href="#/menu">开始阅读</a>
+<a href="#/README">开始阅读</a>
 </div>
 <div class="mask"></div></section>
