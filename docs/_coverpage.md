@@ -1,4 +1,7 @@
-<div class="cover-main"><img width="180px" src="icon/icon.JPG">
+<!---这个是封面渲染的内容-->
+
+<div class="cover-main">
+<img width="180px" src="icon/icon.JPG">
 
 <h1 id="Javaer">
 <a><span> JAVA 学习笔记 </span></a>
@@ -19,4 +22,5 @@
 
 <a href="#/README">开始阅读</a>
 </div>
-<div class="mask"></div></section>
+
+ 
