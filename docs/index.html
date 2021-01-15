@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      name: '',
+      repo: '',
+      loadSidebar: true,
+      subMaxLevel: 3,
+      autoHeader: true,
+      search: {
+        paths: 'auto',
+        placeholder: '🔍 搜索 ',
+        noData: '哎呀，没有找到呀！ ',
+        // Headline depth, 1 - 6
+        depth: 3
+      },
+      copyCode: {
+        buttonText : '复制',
+        errorText  : 'Error',
+        successText: 'OK!'
+      },
+      pagination: {
+        previousText: '上一章',
+        nextText: '下一章',
+      },
+      // 封面渲染
+       coverpage: true
+    }
+  </script>
+  <!-- Docsify v4 -->
+<!--  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>-->
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <!--分页插件-->
+  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <!--统计访问量插件-->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+</body>
+</html>
