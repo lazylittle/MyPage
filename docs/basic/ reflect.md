@@ -45,3 +45,44 @@
                 System.out.println(field);
             }
 ```
+###为对象的属性赋值
+```java
+            Class c1=Class.forName("student");
+            //创建对象
+            Object obj=c1.newInstance();
+            //获取属性
+            Field field= c1.getField("name");
+            //设置属性的值
+            field.set(obj,"123");
+            System.out.println(field.get(obj));
+```
+###获取对象的方法
+```java
+            Class c1 = Class.forName("student");
+            //创建对象
+            Object obj = c1.newInstance();
+            //获取方法 public
+            Method[] methods = c1.getMethods();
+            for (Method method : methods) {
+                System.out.println(method);
+            }
+            //获取方法 包括private
+            Method[] methods2 = c1.getDeclaredMethods();
+            for (Method method : methods2) {
+                System.out.println(method);
+            }
+```
+###调用对象的方法
+```java
+            Class c1 = Class.forName("student");
+            //创建对象
+            Object obj = c1.newInstance();
+            //获取方法 public
+            Method methods = c1.getMethod("printf");
+            //获取私有的方法
+            Method method2 = c1.getDeclaredMethod("print",int.class);
+            method2.setAccessible(true);
+            //调用
+            System.out.println(methods.invoke(obj));
+```
+
