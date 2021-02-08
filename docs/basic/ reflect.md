@@ -31,3 +31,17 @@
             con1.setAccessible(true);
             Object obj2 = con1.newInstance();
 ```
+###获取对象的属性
+```java
+            Class c1 = Class.forName("student");
+            //获取所有public的属性
+            Field[] fields = c1.getFields();
+            for (Field field : fields) {
+                System.out.println(field);
+            }
+            //获取所有声明的属性，包括private
+            Field[] fields1=c1.getDeclaredFields();
+            for (Field field : fields1) {
+                System.out.println(field);
+            }
+```
