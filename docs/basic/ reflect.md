@@ -26,7 +26,6 @@
             char[] chars = new char[]{'h', 'e', 'l', 'l', 'o', ',', 'w', 'o', 'r', 'l', 'd'};
             Object obj = con1.newInstance(chars);
             System.out.println(obj);
-
             //使用私有的构造函数
             con1.setAccessible(true);
             Object obj2 = con1.newInstance();
