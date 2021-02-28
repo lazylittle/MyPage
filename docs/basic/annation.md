@@ -2,9 +2,8 @@
 ###什么是注解
 注解就是JAVA 中的一种注释机制，标注的值会被嵌入到字节码文件中,使得注解可以java读取到
 ###注解的作用
-可以用来代替配置文件
-
-大量的框架使用了注解
+* 可以用来代替配置文件
+* 大量的框架使用了注解
 ###内置注解
 java的内置注解
 #### 作用于代码
@@ -19,3 +18,31 @@ java的内置注解
 * @Target - 标记这个注解应该是哪种 Java 成员。
 * @Inherited - 标记这个注解是继承于哪个注解类(默认 注解并没有继承于任何子类)。
 * @Repeatable - Java 8 开始支持，标识某注解可以在同一个声明上使用多次。
+###自定义注解
+####语法
+```java
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface testannotation {
+    int show();
+    String show2();
+    String show3() default "4";
+}
+```                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+####使用注解
+```java
+//show3属性有默认值可以不用赋值
+
+@testannotation(show = 2, show2 = "3")
+public class streamClass {
+    public static void main(String[] args) throws ClassNotFoundException {
+        streamClass t = new streamClass();
+        Class<?> c1 = t.getClass();
+        testannotation ano = c1.getAnnotation(testannotation.class);
+        System.out.println( ano.show());
+        //是否包含指定的注解
+        System.out.println(c1.isAnnotationPresent(testannotation.class));
+    }
+}
+```
+
