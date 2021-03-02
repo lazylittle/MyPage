@@ -71,3 +71,34 @@ class threadtest implements Callable<String> {
     }
 }
 ```
+###使用线程池进行线程
+```java
+
+public class threadtestclass {
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
+            ExecutorService executorService = Executors.newFixedThreadPool(5);
+            //没有返回值的方法
+            executorService.execute(new threadtest());
+            FutureTask<String> ft = new FutureTask<String>(new threadtest2());
+            //有返回值的方法
+            executorService.submit(ft);
+            executorService.shutdown();
+            System.out.println(ft.get());
+
+    }
+}
+class threadtest implements Runnable {
+        @Override
+    public void run() {
+        System.out.println("这里是一个子线程");
+    }
+}
+class threadtest2 implements Callable<String> {
+    @Override
+    public String call() throws Exception {
+        System.out.println("有返回值的子线程");
+        return "返回值";
+    }
+}
+
+```
