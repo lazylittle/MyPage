@@ -41,3 +41,58 @@ public class poxyclass {
 ![tupian](icon/静态代理结果.png)
 
 ###动态代理
+
+动态代理中最重要的两个类Proxy和InvocationHandler，用于创建对象和扩展方法
+
+
+```java
+
+interface ITestServices {
+    void sayHello();
+}
+
+class TestServicesImpl implements ITestServices {
+    @Override
+    public void sayHello() {
+        System.out.println("hello world");
+    }
+}
+
+class Logger implements InvocationHandler {
+    Object target;
+
+    public Logger(Object targets) {
+
+        target = targets;
+    }
+
+    @Override
+    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        doSomethingBefore();
+        Object result = method.invoke(target, args);
+        doSomethingAfter();
+        return result;
+    }
+
+    private void doSomethingBefore() {
+
+        System.out.println("动态代理测试:方法执行之前");
+    }
+
+    private void doSomethingAfter() {
+
+        System.out.println("动态代理测试:方法执行之后");
+    }
+}
+
+public class poxyclass {
+    public static void main(String[] args) {
+
+        TestServicesImpl testServices = new TestServicesImpl();
+        Logger logger = new Logger(testServices);
+        ITestServices proxTestServices = (ITestServices) Proxy.newProxyInstance(TestServicesImpl.class.getClassLoader(), TestServicesImpl.class.getInterfaces(), logger);
+        proxTestServices.sayHello();
+    }
+}
+
+```
