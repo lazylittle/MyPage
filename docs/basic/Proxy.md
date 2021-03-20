@@ -73,26 +73,23 @@ class Logger implements InvocationHandler {
         doSomethingAfter();
         return result;
     }
-
     private void doSomethingBefore() {
-
         System.out.println("动态代理测试:方法执行之前");
     }
 
     private void doSomethingAfter() {
-
         System.out.println("动态代理测试:方法执行之后");
     }
 }
 
 public class poxyclass {
     public static void main(String[] args) {
-
         TestServicesImpl testServices = new TestServicesImpl();
         Logger logger = new Logger(testServices);
         ITestServices proxTestServices = (ITestServices) Proxy.newProxyInstance(TestServicesImpl.class.getClassLoader(), TestServicesImpl.class.getInterfaces(), logger);
         proxTestServices.sayHello();
     }
 }
-
 ```
+输出结果
+![tupian](icon/动态代理结果.png)

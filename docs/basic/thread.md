@@ -73,7 +73,6 @@ class threadtest implements Callable<String> {
 ```
 ###使用线程池进行线程
 ```java
-
 public class threadtestclass {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
             ExecutorService executorService = Executors.newFixedThreadPool(5);
@@ -84,7 +83,6 @@ public class threadtestclass {
             executorService.submit(ft);
             executorService.shutdown();
             System.out.println(ft.get());
-
     }
 }
 class threadtest implements Runnable {
@@ -100,5 +98,4 @@ class threadtest2 implements Callable<String> {
         return "返回值";
     }
 }
-
 ```
